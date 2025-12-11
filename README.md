@@ -37,6 +37,32 @@ UX is tuned for a consistent dark theme with a purple accent (`#B39DDB`) and a d
 
 ---
 
+## Tech Stack
+- Frontend:
+  - Framework: Flutter (Dart)
+  - Routing: `go_router`
+  - Networking: `http`, `dio`, cookies via `cookie_jar` and `dio_cookie_manager`
+  - Secure storage: `flutter_secure_storage`
+  - Device & UX: `camera`, `mobile_scanner`, `file_picker`, `table_calendar`
+  - Biometrics: `local_auth` with platform integrations
+  - ML (optional features): Google ML Kit (`google_mlkit_face_detection`, commons, and related packages)
+  - Real-time: `socket_io_client`
+  - Utilities: `intl`, `image`, `qr_flutter`
+  - Platforms: Android, iOS, Web, Windows, Linux, macOS
+- Backend:
+  - Runtime: Node.js
+  - Web framework: Express
+  - Database: MongoDB (Mongoose models in `backend/src/models`)
+  - Real-time: Socket.io (see `backend/realtime`)
+  - Auth & security: Sessions/tokens, biometric key registration/approval
+  - Deployment: Config via `render.yaml` (Render.com) or similar
+- Tooling & Testing:
+  - Frontend: `flutter analyze`, `flutter_test`
+  - Backend: `npm test`
+  - Scripts: index creation, race-condition testing in `backend/scripts`
+
+---
+
 ## Architecture
 The project is a monorepo with two primary components:
 - `frontend/`: Flutter application (multi-platform). Implements navigation, screens, repositories, services, and platform integrations.
